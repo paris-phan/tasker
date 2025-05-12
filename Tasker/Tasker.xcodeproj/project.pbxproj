@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		BC48DC8E2DD1E2740007C59C /* Tasker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCA4BB152DD27E18000DD8A0 /* Tasker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		BC48DC902DD1E2740007C59C /* Tasker */ = {
+		BCA4BB172DD27E18000DD8A0 /* Tasker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Tasker;
 			sourceTree = "<group>";
@@ -19,7 +19,7 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BC48DC8B2DD1E2740007C59C /* Frameworks */ = {
+		BCA4BB122DD27E18000DD8A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BC48DC852DD1E2740007C59C = {
+		BCA4BB0C2DD27E18000DD8A0 = {
 			isa = PBXGroup;
 			children = (
-				BC48DC902DD1E2740007C59C /* Tasker */,
-				BC48DC8F2DD1E2740007C59C /* Products */,
+				BCA4BB172DD27E18000DD8A0 /* Tasker */,
+				BCA4BB162DD27E18000DD8A0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BC48DC8F2DD1E2740007C59C /* Products */ = {
+		BCA4BB162DD27E18000DD8A0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC48DC8E2DD1E2740007C59C /* Tasker.app */,
+				BCA4BB152DD27E18000DD8A0 /* Tasker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BC48DC8D2DD1E2740007C59C /* Tasker */ = {
+		BCA4BB142DD27E18000DD8A0 /* Tasker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC48DC9A2DD1E2740007C59C /* Build configuration list for PBXNativeTarget "Tasker" */;
+			buildConfigurationList = BCA4BB232DD27E19000DD8A0 /* Build configuration list for PBXNativeTarget "Tasker" */;
 			buildPhases = (
-				BC48DC8A2DD1E2740007C59C /* Sources */,
-				BC48DC8B2DD1E2740007C59C /* Frameworks */,
-				BC48DC8C2DD1E2740007C59C /* Resources */,
+				BCA4BB112DD27E18000DD8A0 /* Sources */,
+				BCA4BB122DD27E18000DD8A0 /* Frameworks */,
+				BCA4BB132DD27E18000DD8A0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				BC48DC902DD1E2740007C59C /* Tasker */,
+				BCA4BB172DD27E18000DD8A0 /* Tasker */,
 			);
 			name = Tasker;
 			packageProductDependencies = (
 			);
 			productName = Tasker;
-			productReference = BC48DC8E2DD1E2740007C59C /* Tasker.app */;
+			productReference = BCA4BB152DD27E18000DD8A0 /* Tasker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BC48DC862DD1E2740007C59C /* Project object */ = {
+		BCA4BB0D2DD27E18000DD8A0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
-					BC48DC8D2DD1E2740007C59C = {
+					BCA4BB142DD27E18000DD8A0 = {
 						CreatedOnToolsVersion = 16.3;
 					};
 				};
 			};
-			buildConfigurationList = BC48DC892DD1E2740007C59C /* Build configuration list for PBXProject "Tasker" */;
+			buildConfigurationList = BCA4BB102DD27E18000DD8A0 /* Build configuration list for PBXProject "Tasker" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = BC48DC852DD1E2740007C59C;
+			mainGroup = BCA4BB0C2DD27E18000DD8A0;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = BC48DC8F2DD1E2740007C59C /* Products */;
+			productRefGroup = BCA4BB162DD27E18000DD8A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BC48DC8D2DD1E2740007C59C /* Tasker */,
+				BCA4BB142DD27E18000DD8A0 /* Tasker */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BC48DC8C2DD1E2740007C59C /* Resources */ = {
+		BCA4BB132DD27E18000DD8A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BC48DC8A2DD1E2740007C59C /* Sources */ = {
+		BCA4BB112DD27E18000DD8A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		BC48DC982DD1E2740007C59C /* Debug */ = {
+		BCA4BB212DD27E19000DD8A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -189,7 +189,7 @@
 			};
 			name = Debug;
 		};
-		BC48DC992DD1E2740007C59C /* Release */ = {
+		BCA4BB222DD27E19000DD8A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -245,13 +245,12 @@
 			};
 			name = Release;
 		};
-		BC48DC9B2DD1E2740007C59C /* Debug */ = {
+		BCA4BB242DD27E19000DD8A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Tasker/Tasker.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -264,6 +263,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.parisphan.Tasker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -273,13 +273,12 @@
 			};
 			name = Debug;
 		};
-		BC48DC9C2DD1E2740007C59C /* Release */ = {
+		BCA4BB252DD27E19000DD8A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Tasker/Tasker.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -292,6 +291,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.parisphan.Tasker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -304,25 +304,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BC48DC892DD1E2740007C59C /* Build configuration list for PBXProject "Tasker" */ = {
+		BCA4BB102DD27E18000DD8A0 /* Build configuration list for PBXProject "Tasker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC48DC982DD1E2740007C59C /* Debug */,
-				BC48DC992DD1E2740007C59C /* Release */,
+				BCA4BB212DD27E19000DD8A0 /* Debug */,
+				BCA4BB222DD27E19000DD8A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BC48DC9A2DD1E2740007C59C /* Build configuration list for PBXNativeTarget "Tasker" */ = {
+		BCA4BB232DD27E19000DD8A0 /* Build configuration list for PBXNativeTarget "Tasker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC48DC9B2DD1E2740007C59C /* Debug */,
-				BC48DC9C2DD1E2740007C59C /* Release */,
+				BCA4BB242DD27E19000DD8A0 /* Debug */,
+				BCA4BB252DD27E19000DD8A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BC48DC862DD1E2740007C59C /* Project object */;
+	rootObject = BCA4BB0D2DD27E18000DD8A0 /* Project object */;
 }
