@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Tasker
+//  TaskItemer
 //
 //  Created by Paris Phan on 5/12/25.
 //
@@ -10,7 +10,7 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var tasks: [Task]
+    @Query private var tasks: [TaskItem]
 
     var body: some View {
         NavigationSplitView {
@@ -29,13 +29,13 @@ struct ContentView: View {
                         }
                     }
                 }
-                .onDelete(perform: deleteTasks)
+                .onDelete(perform: deleteTaskItems)
             }
             .navigationSplitViewColumnWidth(min: 180, ideal: 200)
             .toolbar {
                 ToolbarItem {
-                    Button(action: addTask) {
-                        Label("Add Task", systemImage: "plus")
+                    Button(action: addTaskItem) {
+                        Label("Add TaskItem", systemImage: "plus")
                     }
                 }
             }
@@ -44,14 +44,14 @@ struct ContentView: View {
         }
     }
 
-    private func addTask() {
-        withAnimation {
-            let newTask = Task(title: "New Task")
-            modelContext.insert(newTask)
-        }
+    private func addTaskItem() {
+//        withAnimation {
+//            let newTaskItem = TaskItem(title: "New TaskItem")
+//            modelContext.insert(newTaskItem)
+//        }
     }
 
-    private func deleteTasks(offsets: IndexSet) {
+    private func deleteTaskItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
                 modelContext.delete(tasks[index])
@@ -62,5 +62,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Task.self, inMemory: true)
+        .modelContainer(for: TaskItem.self, inMemory: true)
 }

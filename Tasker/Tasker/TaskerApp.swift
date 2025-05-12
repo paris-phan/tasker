@@ -10,9 +10,13 @@ import SwiftData
 
 @main
 struct TaskerApp: App {
+    @State private var primarySelection: PrimaryItem?
+    @State private var secondarySelection: Project?
+    
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Task.self,
+            TaskItem.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +29,18 @@ struct TaskerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationSplitView {
+                PrimarySidebar(selection: $primarySelection)
+                    .frame(minWidth: 56, idealWidth: 64, maxWidth: 72)   // skinny icon bar
+            } content: {
+                SecondarySidebar(selection: $secondarySelection,
+                                 primarySelection: primarySelection)
+                    .frame(minWidth: 200, idealWidth: 220)              // lists / filters
+            } detail: {
+                TaskListView(project: secondarySelection,
+                             primarySelection: primarySelection)
+            }
+            .navigationSplitViewStyle(.balanced)
         }
         .modelContainer(sharedModelContainer)
     }
