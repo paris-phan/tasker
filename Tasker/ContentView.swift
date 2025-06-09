@@ -2,52 +2,94 @@
 //  ContentView.swift
 //  Tasker
 //
-//  Created by Paris Phan on 6/8/25.
+//  Created by Paris Phan on 5/12/25.
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+    @State private var tasks: [Task] = []
+    @State private var newTaskTitle: String = ""
+    @State private var selection: String? = "Today"
+    @State private var newTaskDate: Date = Date()
+    
+    // Add this computed property to filter tasks
+    private var filteredTasks: [Task] {
+        guard let selection = selection else { return tasks }
+        
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        _ = calendar.date(byAdding: .day, value: 1, to: today)!
+        
+        switch selection {
+        case "Today":
+            return tasks.filter { task in
+                calendar.isDate(task.date, inSameDayAs: today)
+            }
+        case "Upcoming":
+            return tasks.filter { task in
+                task.date > today
+            }
+        case "All":
+            return tasks
+        default:
+            return tasks
+        }
+    }
+    
     var body: some View {
         NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+            // Sidebar
+            List(selection: $selection) {
+                Section("Tasks") {
+                    NavigationLink(value: "Today") {
+                        Label("Today", systemImage: "star")
                     }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-            .toolbar {
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    NavigationLink(value: "Upcoming") {
+                        Label("Upcoming", systemImage: "calendar")
                     }
+                    NavigationLink(value: "All", label: {
+                        Label("All", systemImage: "tray")
+                    })
                 }
             }
+            .listStyle(.sidebar)
         } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+            // Main content area
+            VStack {
+                List {
+                    ForEach(filteredTasks) { task in
+                        HStack {
+                            Image(systemName: task.isCompleted ? "checkmark.circle.fill" : "circle")
+                                .foregroundColor(task.isCompleted ? .blue : .gray)
+                                .onTapGesture {
+                                    if let index = tasks.firstIndex(where: { $0.id == task.id }) {
+                                        tasks[index].isCompleted.toggle()
+                                    }
+                                }
+                            Text(task.title)
+                                .strikethrough(task.isCompleted)
+                        }
+                    }
+                }
+                
+                // New task input
+                HStack {
+                    Image(systemName: "plus.circle")
+                        .foregroundColor(.blue)
+                        .onTapGesture {
+                            if !newTaskTitle.isEmpty {
+                                tasks.append(Task(title: newTaskTitle, isCompleted: false, date: newTaskDate))
+                                newTaskTitle = ""
+                                newTaskDate = Date()  // Reset date to current date
+                            }
+                        }
+                    TextField("Add a task...", text: $newTaskTitle)
+                        .textFieldStyle(.plain)
+                    DatePicker("", selection: $newTaskDate, displayedComponents: .date)
+                        .labelsHidden()
+                }
+                .padding()
             }
         }
     }
@@ -55,5 +97,4 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
